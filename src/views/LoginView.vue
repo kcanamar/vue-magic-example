@@ -1,10 +1,20 @@
 <script>
 import { ref } from "vue";
+// import the vuex store
+import { useStore } from 'vuex';
+
 export default {
   setup() {
+    // create a new instance of store
+    const store = useStore();
     const email = ref("");
+    // dispatch the signup/login action 
     const login = () => {
-      console.log("User logged in");
+      // first argument is the action
+      store.dispatch('login', {
+        // second argument is the payload
+        email: email.value
+      })
     };
     return {
       email,
