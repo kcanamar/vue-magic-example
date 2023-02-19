@@ -60,7 +60,7 @@ export default createStore({
       // commit the mutation
       commit('setUser', null)
       // redirect the now unauthed user to home page
-      await router.push({ name: 'Home' })
+      await router.push({ name: 'home' })
     }
   },
   modules: {
